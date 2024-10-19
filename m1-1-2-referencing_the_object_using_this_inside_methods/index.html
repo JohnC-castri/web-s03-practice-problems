@@ -7,17 +7,19 @@
     /*
     PROBLEM 1: Rewrite the below plane object to use "this" when referring to the object in the fly method. Console.log the result of the method to make sure it prints correctly to the console.
     */
-    // const plane = {
-    //     make: "Boeing",
-    //     model: 737,
-    //     holds: 500,
-    //     odometer: 0,
-    //     destination: "Phuket, Thailand",
-    //     fly(miles) {
-    //       plane.odometer += miles;
-    //       return `${plane.holds} passengers have flown ${miles} towards ${plane.destination}, putting the plane's odometer at ${plane.odometer}`;
-    //     }
-    //   }
+    const plane = {
+        make: "Boeing",
+        model: 737,
+        holds: 500,
+        odometer: 0,
+        destination: "Phuket, Thailand",
+        fly: function (miles) {
+          this.odometer += miles;
+          return `${this.holds} passengers have flown ${miles} towards ${this.destination}, putting the plane's odometer at ${this.odometer}`;
+        }
+      }
+      console.log(plane.fly(100))
+      console.log(plane.fly(20))
 
     //ENTER YOUR CODE HERE
 
@@ -26,9 +28,16 @@
     PROBLEM 2: Create a person object that includes:
       •A name property with a value of the person's name (e.g. "John")
       •A greet method that logs a message to the console, greeting the person by name. The message should include the person's name (e.g. "Hello, John!").
-
+      */
     //ENTER YOUR CODE HERE
+    let person = {name: 'john',
+    greeting: function (name) {
+      return `Hello there ${this.name}`
+    }
+    }
+    console.log(person.greeting())
 
+    
      /*
     PROBLEM 3: Create an object named painter and includes:
     •A favorite artist property with a value of "Claude Monet"
@@ -38,6 +47,19 @@
     console.log the paint method to see the changing number of paintings
     */
     //ENTER YOUR CODE HERE
+    let painter = {"favorite artist": 'Claude Monet',
+      medium: 'watercolor',
+      paintings: 10,
+      paint: function () {
+        this.paintings += 1
+        return `there is ${this.paintings} paintings now.`
+      }
+    }
+    console.log(painter.paintings)
+    painter.paint()
+    console.log(painter.paint())
+
+    
 
     /*
     PROBLEM 4: Create an object named adventurer and includes:
@@ -46,25 +68,42 @@
     •A method called heal that adds a number of health points to the character health property if it is less than 100.
     */
     //ENTER YOUR CODE HERE
+    let adventurer = {type: 'Wizard',
+      health: 50,
+      heal: function () {
+        if (this.health < 100) {
+          this.health += 20
+          return `20 health points added, new tottal is ${this.health}`
+        }
+        else {
+          return `have more than 100 HP, cant add anymore current is ${this.health}`
+        }
+        return
+      }
+    }
+    console.log(adventurer.heal())
+    console.log(adventurer.heal())
+    console.log(adventurer.heal())
+    console.log(adventurer.heal())
 
     /*
     PROBLEM 5 (DEBUGGING): The following code is supposed to create a bankAccount object, but you receive the error: 'Uncaught ReferenceError: balance is not defined'. Fix the errors and invoke the methods to display the correct messages.
-
+    */
     const bankAccount = {
       balance: 0,
       deposit: function(amount) {
-        balance += amount;
+        this.balance += amount;
         console.log(`Deposited $${amount}.`);
       },
       withdraw: function(amount) {
-        balance -= amount;
+        this.balance -= amount;
         console.log(`Withdrawn $${amount}.`);
       },
       displayBalance: function() {
-        console.log(`Balance: $${balance}.`);
+        console.log(`Balance: $${this.balance}.`);
       }
     };
-    */
+    
 
     //ENTER YOUR CODE HERE
 
