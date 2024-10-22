@@ -14,6 +14,13 @@
     */
 
     //ENTER YOUR CODE HERE
+    const obj = {
+      multiplier: 10,
+      multiply(a, b) {
+        return a * b * this.multiplier
+      }
+    }
+    console.log(obj.multiply(4, 6))
 
     /*
     PROBLEM 2: Change the arrow function called calculateTotal to work within the flock object below while also using the 'this' keyword. Console.log the calculateTotal method to see the results printed to the console.
@@ -28,7 +35,17 @@
     */
 
     //ENTER YOUR CODE HERE
-
+    const flock = {
+      herd: 200,
+      species: 'seagull',
+      calculateTotal (number) {
+        console.log(`amount added: ${number}`)
+        console.log(`before amount added of herd: ${this.herd}`)
+        this.herd += number;
+        return this.herd
+      }
+    }
+    console.log(flock.calculateTotal(10))
 
     /*
    PROBLEM 3: Change the arrow function called countdown to work within the game object below while using the 'this' keyword. Console.log the method to see the results printed to the console.
