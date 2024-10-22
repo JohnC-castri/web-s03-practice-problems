@@ -15,12 +15,23 @@
     e.g argCount('cat', 1, 4)   // 3
     */
     //ENTER YOUR CODE HERE
+    function argCount() {
+      console.log(`arg length: ${arguments.length}, Data supplied: ${arguments}`)
+    }
+    argCount(20, 4, 2, 0)
 
     /*
     PROBLEM 2: Create a function "tagRace" that accepts any number of arguments and returns the last argument passed.
     eg. tagRace('Tobi', 'Josh', 'Samantha', 'Marie')  returns 'Marie'
     */
     //ENTER YOUR CODE HERE
+    function tagRace() {
+      let argumentVal = ''
+      let argIndex = arguments.length - 1
+      argumentVal = arguments[argIndex]
+      console.log(argumentVal)
+    }
+    tagRace(20, 5, 'space', 'tomatoes')
 
     /*
     PROBLEM 3: Create a function "logData" that accepts a variable number of string arguments, joins them together and prints them out as a single string.
@@ -28,6 +39,11 @@
     FUN FACT: console.log() is implemented in a similar manner, try `console.log('hello', 'how', 'are', 'you?')`
     */
     //ENTER YOUR CODE HERE
+    function logData(...args) {
+      let joined = args.join(" ")
+      console.log(joined)
+    }
+    logData(20, 3, "tomatoes", 'roncks')
 
     /*
     PROBLEM 4: Create a function "prefixer" that receives a string as an argument passed from the FIRST parameter "prefix" and any number of extra string arguments.
@@ -35,24 +51,34 @@
     e.g prefixer(un, 'opposed', 'ashamed') returns ['unopposed', 'unashamed']
     */
     //ENTER YOUR CODE HERE
+    function prefixer(prefix, ...args) {
+
+      const prefixedWords = [];
+
+      for (let i = 0; i < args.length; i++) {
+        prefixedWords.push(prefix + args[i]);
+      }
+
+      return prefixedWords;
+    }
 
     /*
     PROBLEM 5 (DEBUGGING): Fix the issue(s) with the code below
     */
     // UNCOMMENT CODE
-    // const min = () => {
-    //   let min = arguments[0];
-    //
-    //   for (let i = 1; i < arguments.length; i++){
-    //     if (arguments[i] < min){
-    //       min = arguments[i];
-    //     }
-    //   }
-    //
-    //   return min;
-    // }
-    //
-    // console.log(min(3, 2, 7));
+    function min () {
+      let min = arguments[0];
+    
+      for (let i = 1; i < arguments.length; i++){
+        if (arguments[i] < min){
+          min = arguments[i];
+        }
+      }
+    
+      return min;
+    }
+    
+    console.log(min(3, 2, 7));
 
   </script>
 

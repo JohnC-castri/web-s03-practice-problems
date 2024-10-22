@@ -38,7 +38,7 @@
     const flock = {
       herd: 200,
       species: 'seagull',
-      calculateTotal (number) {
+      calculateTotal(number) {
         console.log(`amount added: ${number}`)
         console.log(`before amount added of herd: ${this.herd}`)
         this.herd += number;
@@ -65,6 +65,19 @@
    */
 
     //ENTER YOUR CODE HERE
+    let game = {
+      name: 'Hide And Seek',
+      players: 5,
+      location: 'Central Park',
+      currentCount: 0,
+      countDown(SCount) {
+        this.currentCount = SCount
+        if (this.currentCount >= 0) {
+          console.log(`Current countdown number: ${this.currentCount}`);
+          this.countDown(this.currentCount - 1);
+        }
+      }
+    }
 
 
     /*
@@ -83,18 +96,49 @@
     */
 
     //ENTER YOUR CODE HERE
+    let tech = {
+      name: "calculator", 
+      type: 'computer',
+      number1: 3,
+      number2: 8,
+      tottal: 0,
+      Calculating (num1, num2, method) {
+        if (method === 'mult') {
+          this.tottal = num1 * num2
+          return this.tottal
+        }
+        else if (method === 'sub') {
+          this.tottal = num1 - num2
+          return this.tottal
+        }
+        else if (method === "add") {
+          this.tottal = num1 + num2
+          return this.tottal
+        }
+        else {
+          return `Method needs to be a string of "add" for adding, "mult" for multiplying, and "sub" for  subtracting. currentlly marked as [${method}]"`
+        }
+      }
+    }
+    console.log(tech.Calculating(tech.number1, tech.number2, "subtra"))
+    console.log(tech.Calculating(tech.number1, tech.number2, "sub"))
+    console.log(tech.Calculating(tech.number1, tech.number2, "add"))
+    console.log(tech.Calculating(tech.number1, tech.number2, "mult"))
+    console.log(tech.Calculating(20, 15, "add"))
+
+
 
     /*
     PROBLEM 5 (DEBUGGING): This object contains a value property and a double method that multiplies the value by 2. When invoking the double method, you receive the error: 'NaN' (Not a Number). Fix the code below and console.log the double method to see the correct result printed to the console.
     */
-    // const obj = {
-    //   value: 10,
-    //   double: () => {
-    //     return this.value * 2;
-    //   }
-    // };
-    //
-    // console.log(obj.double()); // Output: NaN
+    const object = {
+      value: 10,
+      double () {
+        return this.value * 2
+      }
+    }
+    
+    console.log(object.double()); // Output: NaN
 
   </script>
 
