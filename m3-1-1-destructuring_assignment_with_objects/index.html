@@ -15,6 +15,8 @@
       city: 'New York'
     };
     //ENTER YOUR CODE HERE
+    let { name, age, city } = person
+    console.log(`name: ${name}, age: ${age}, city: ${city}`)
 
     /*
     PROBLEM 2: Given the object student below, extract properties from the object and assign them to variables.
@@ -26,6 +28,8 @@
       lastName: 'Doe'
     };
     //ENTER YOUR CODE HERE
+    let { id, firstName, lastName } = student
+    console.log(`id: ${id}, firstName: ${firstName}, lastName: ${lastName}`)
 
     /*
    PROBLEM 3: Given the object car below, extract properties from the object and assign them to variables.
@@ -36,6 +40,9 @@
       model: 'Corolla'
     };
     //ENTER YOUR CODE HERE
+    let { brand, model } = car
+    console.log(`brand: ${brand}, model: ${model}`)
+
 
     /*
     PROBLEM 4: Given the object movie below, extract properties from the object and assign them to variables.
@@ -61,7 +68,17 @@
       },
     };
     //ENTER YOUR CODE HERE
+    const { title: movieTitle } = movie;
+    const { director: movieDirector } = movie;
+    const { releaseYear: movieReleaseYear } = movie;
+    const { first_actor: { name: leadActor } } = movie;
+    const { first_actor: leadCharacter } = movie;
 
+    console.log(movieTitle)
+    console.log(movieDirector)
+    console.log(movieReleaseYear)
+    console.log(leadActor)
+    console.log(leadCharacter)
     /*
     PROBLEM 5 (DEBUGGING): The code below should extract the city, state, and title properties from the object
     and assign them to variables. However, there is a bug in the code.  Fix the bug so that the code works as intended.
@@ -80,11 +97,15 @@
         company: 'Tech Corp'
       }
     };
-    /*
-    const company = data.job;
-    const state = data.location.state;
-    const title = data.title;
-    */
+    
+    const { company } = data.job;
+    const { state } = data.user.location;
+    const { title } = data.job;
+    console.log(company)
+    console.log(state)
+    console.log(title)
+    console.log(`job-company: ${company}, user-location-state: ${state}, job-title: ${title}`)
+    
   </script>
 
 </body>
