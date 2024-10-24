@@ -10,18 +10,36 @@
     */
 
     //ENTER YOUR CODE HERE
+    // function printMessage(message) {
+    //   setTimeout(function () { console.log(message) }, 2000)
+    // }
+    // printMessage('Hello World')
 
     /*
     PROBLEM 2: Write a function called delayedSum that takes two numbers as parameters and uses setTimeout to return the sum of the numbers after 5 seconds. Call the function with two numbers of your choice and log the result to the console.
     */
 
     //ENTER YOUR CODE HERE
+    // function delayedSum(num1, num2) {
+    //   console.log(num1 + num2)
+    // }
+    // setTimeout(() => delayedSum(10, 5), 5000)
 
     /*
     PROBLEM 3: Write a function called printNumbers that logs the numbers 1 to 5 to the console with a delay of 500ms between each log using setTimeout. Use a loop to achieve this.
     */
 
     //ENTER YOUR CODE HERE
+    // function printNumbers() {
+    //   let num = 0
+    //   for (let i = 0; i < 5; i++) {
+    //     setTimeout(() => {
+    //       num++
+    //       console.log(num)
+    //     }, i * 2000)
+    //   }
+    // }
+    // printNumbers()
 
     /*
     PROBLEM 4: Write a function called countdown that takes a number as a parameter and uses setInterval and clearInterval to count down from that number to 0, logging each number to the console. Call the function with a number of your choice.
@@ -31,17 +49,31 @@
     clearInterval: https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
     */
 
-    //ENTER YOUR CODE HERE
+    
+    // function countdown(startingNumber) {
+
+    //   const intervalId = setInterval(() => {
+    //     console.log(startingNumber);
+    //     startingNumber--;
+
+
+    //     if (startingNumber < 0) {
+    //       clearInterval(intervalId);
+    //     }
+    //   }, 1000);
+    // }
+
+    // countdown(5);
+    
+
 
     /*
     PROBLEM 5 (DEBUGGING): The code below should log a message to the console every 2 seconds, starting from 0 and going up to 10. However, the code below does not function properly. Run the snippet below to see the problem, and fix the code so that the correct numbers print to the console.
     */
 
     function count() {
-      for (var i = 0; i <= 10; i++) {
-        setTimeout(function () {
-          console.log(i);
-        }, i * 2000);
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {console.log(i)}, i * 2000);
       }
     }
     count()

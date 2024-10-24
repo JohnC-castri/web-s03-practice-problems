@@ -11,6 +11,9 @@
     Use the ternary operator to create the conditional.
     */
     //ENTER YOUR CODE HERE
+    function greeting (name) {name ? console.log(`Hello, ${name}`): console.log('Hello, stranger!');}
+    greeting('tomatoes')
+    greeting()
 
     /*
     PROBLEM 2: Declare a function called canDrink that takes an age as an argument and
@@ -18,6 +21,9 @@
     or "You cannot drink." if age is less than 21. Use the ternary operator to create the conditional.
     */
     //ENTER YOUR CODE HERE
+    function canDrink (age) {age >= 21 ? console.log("You can drink!"): console.log("You cannot drink.")}
+    canDrink(50)
+    canDrink(20)
 
     /*
    PROBLEM 3: Declare a function called isEven that takes a number as an argument and
@@ -25,6 +31,10 @@
    to create the conditional.
    */
     //ENTER YOUR CODE HERE
+    function isEven (num) {num % 2 === 0 ? console.log(`${num}, is Even`): console.log(`${num}, is Odd`)}
+    isEven(20)
+    isEven(3)
+
 
     /*
     PROBLEM 4: Declare a function called getDiscount that takes a boolean isMember
@@ -32,21 +42,24 @@
     or total if isMember is falsy. Use the ternary operator to create the conditional.
     */
     //ENTER YOUR CODE HERE
+    function getDiscount(isMember, total) {
+      return isMember ? total - 10 : total;
+    }
 
     /*
     PROBLEM 5 (DEBUGGING): The following function isPalindrome is supposed to return true if the string is a palindrome,
     and false if it is not.  However, it is not working correctly.  Please debug the function so that it works as intended.
     */
 
-    /*
+    
     function isPalindrome(str) {
       let reversedStr = "";
       for (let i = str.length - 1; i >= 0; i--) {
         reversedStr += str[i];
       }
-      return reversedStr = str;
+      return reversedStr === str;
     }
-    */
+    
 
   </script>
 
